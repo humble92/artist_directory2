@@ -53,6 +53,7 @@ exports.postAddArtist = (req,res,next) => {
 }
 
 exports.logout = (req,res,next) => {
+    req.session.username = null;
     req.session.destroy((err) => {
         if(err) {
             return console.log(err);
