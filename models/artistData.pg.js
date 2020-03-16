@@ -18,7 +18,7 @@ function getArtist(id) {
 
 // Gets artists list including specific characters from the database
 function searchArtist(ch) {
-    return db.query("Select * from artist where name like '%" + ch + "%'");
+    return db.query("Select * from artist where lower(name) like '%" + ch + "%'");
 }
 
 // Gets a specific individual from the database
