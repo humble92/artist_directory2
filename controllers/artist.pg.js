@@ -8,19 +8,19 @@ exports.getAllArtist = function(req,res,next) {
     });
 }
 
-exports.searchArtist = (req,res,next) => {
+exports.searchArtist = function(req,res,next) {
     let session = req.session;
     let searchName = req.body.searchName;
     let Artists = artistModel.searchartist(searchName);
     Artists.then( (data) => {
          res.render('artists', { artist: data.rows, artistsCSS: true, artistJS: true, session : session, logInOut: "Logout" });
     });
-};
+}
 
-exports.getAddArtist = (req,res,next) => {
+exports.getAddArtist = function(req,res,next) {
     let session = req.session;
     res.render('artistadd', {formsCSS: true, artistJS: true, session : session, logInOut: "Logout"});
-};
+}
 
 exports.getArtist = function(req,res,next) {
     let session = req.session;
@@ -31,7 +31,7 @@ exports.getArtist = function(req,res,next) {
     });
 }
 
-exports.deleteArtist = (req,res,next) => {
+exports.deleteArtist = function(req,res,next) {
     let id = req.params.id;
     artistModel.deleteartist(id);
     res.redirect(301, '/artists');
@@ -52,7 +52,7 @@ exports.postAddArtist = function(req,res,next) {
    res.redirect(301, '/artists');
 }
 
-exports.logout = (req,res,next) => {
+exports.logout = function(req,res,next) {
     req.session.username = null;
     req.session.destroy((err) => {
         if(err) {

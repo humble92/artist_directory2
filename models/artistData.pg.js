@@ -24,6 +24,7 @@ function searchArtist(ch) {
 // Gets a specific individual from the database
 function deleteArtist(id) {
     db.query("delete from artist where id = " + id);
+}
 
 module.exports = {
     add : addArtist,
