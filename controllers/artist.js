@@ -1,29 +1,33 @@
 let artistModel = require('../models/artistData');
 
 exports.getAllArtist = (req,res,next) => {
-   let Artists = artistModel.getall();
+    let session = req.session;
+    let Artists = artistModel.getall();
    Artists.then( ([rows, fieldData]) => {
-        res.render('artists', { artist: rows, artistsCSS: true, artistJS: true, logInOut: "Logout" });
+        res.render('artists', { artist: rows, artistsCSS: true, artistJS: true, session : session, logInOut: "Logout" });
    });
 };
 
 exports.searchArtist = (req,res,next) => {
+    let session = req.session;
     let searchName = req.body.searchName;
     let Artists = artistModel.searchartist(searchName);
     Artists.then( ([rows, fieldData]) => {
-         res.render('artists', { artist: rows, artistsCSS: true, artistJS: true, logInOut: "Logout" });
+         res.render('artists', { artist: rows, artistsCSS: true, artistJS: true, session : session, logInOut: "Logout" });
     });
  };
  
 exports.getAddArtist = (req,res,next) => {
-    res.render('artistadd', {formsCSS: true, artistJS: true, logInOut: "Logout"});
+    let session = req.session;
+    res.render('artistadd', {formsCSS: true, artistJS: true, session : session, logInOut: "Logout"});
 };
 
 exports.getArtist = (req,res,next) => {
+    let session = req.session;
     let id = req.params.id;
     let Artist = artistModel.getartist(id);
     Artist.then( ([data,metadata]) => {
-        res.render('artist', {artist: data[0], artistCSS: true, artistJS: true, logInOut: "Logout"});
+        res.render('artist', {artist: data[0], artistCSS: true, artistJS: true, session : session, logInOut: "Logout"});
     });
 }
 
@@ -49,5 +53,10 @@ exports.postAddArtist = (req,res,next) => {
 }
 
 exports.logout = (req,res,next) => {
-    res.redirect(301, '/login');
+    req.session.destroy((err) => {
+        if(err) {
+            return console.log(err);
+        }
+        res.redirect(301, '/login');
+    });
 }

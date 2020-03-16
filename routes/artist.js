@@ -3,6 +3,7 @@ const artistController = require('../controllers/artist');
 const loginController = require('../controllers/login');
 const router = express.Router();
 
+
 router.get('/login', loginController.loginForm);
 
 router.post('/login', loginController.login);

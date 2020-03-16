@@ -32,6 +32,12 @@
             </ul>
         </nav>
     </header>
-    {{{ body }}}
+    {{#if session.username}}
+        {{{ body }}}
+    {{else if loginCSS}}
+        {{{ body }}}
+    {{else}}
+        <meta http-equiv = "refresh" content = "0; url = '/login'" />
+    {{/if}}
 </body>
 </html>
