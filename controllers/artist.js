@@ -1,4 +1,4 @@
-let artistModel = require('../models/artistData');
+let artistModel = require('../models/artistData.pg');
 
 exports.getAllArtist = (req,res,next) => {
     let session = req.session;
