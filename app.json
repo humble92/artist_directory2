@@ -1,0 +1,8 @@
+{
+    "name": "Artist directory",
+    "description": "Simple artist directory using node/express and mysql",
+    "repository": "https://github.com/humble92/artist_directory2",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+    "keywords": ["node", "express", "heroku", "mysql"],
+    "image": "heroku/nodejs"
+}
