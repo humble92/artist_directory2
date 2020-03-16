@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pageTitle }}</title>
+    <link href='/css/main.css' rel='stylesheet' />
+    {{#if loginCSS}}
+        <link href='/css/login.css' rel='stylesheet' />
+    {{/if}}
+    {{#if artistsCSS}}
+        <link href='/css/artistsCSS.css' rel='stylesheet' />
+    {{/if}}
+    {{#if artistCSS}}
+        <link href='/css/artist.css' rel='stylesheet' />
+    {{/if}}
+    {{#if formsCSS}}
+        <link href='/css/forms.css' rel='stylesheet' />
+    {{/if}}
+
+    {{#if artistJS}}
+        <script src="/js/script.artist.js" defer></script>
+    {{/if}}
+    {{#if loginJS}}
+        <script src="/js/script.login.js" defer></script>
+    {{/if}}
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><button id="btnLogOut" type="button" onclick="loginout()">{{logInOut}}</button></li>
+            </ul>
+        </nav>
+    </header>
+    {{{ body }}}
+</body>
+</html>

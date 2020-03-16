@@ -1,0 +1,53 @@
+.loginForm {
+    width: 100%;
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    background-color: #f7f6f2;
+    padding: 20px;
+}
+
+#container .title {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-weight: bold;
+    font-size: larger;
+    color: #b3b3b2;
+}
+
+input[type=password] {
+    width: 80%;
+    padding: 6px 20px;
+    border-color:#ccc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+.login-button {
+    width: 100%;
+    margin-top: 30px;
+    background-color: #ffc000;
+    color: white;
+    border: 1px solid #ccc;
+}
+
+.alarm {
+    color: red;
+    font-weight: bold;
+}
+
+#btnLogOut {
+    font-weight: bold;
+    color: white;
+    background-color: gray;
+  }

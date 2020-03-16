@@ -1,0 +1,24 @@
+<div id="container">
+    <div id="artist_input_area">
+        <div id="title">Artist Directory</div>
+        <div>
+            <form method="POST" id="searchForm" action="/artists">
+                <input type="text" name="searchName" id="searchName"/>
+                <button id="btnToggleForm" type="button" onclick="openAddArtistForm()">Add</button>
+                <button id="btnSearch" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div id="list">
+        {{#each artist}}
+            <div class="card clearfix" id="{{this.id}}">
+                <img src="{{this.imageURL}}">
+                <span>
+                    <p class="artist_name">{{this.name}}</p>
+                    <p class="artist_desc">{{this.about}}</p>
+                </span>
+                <button class="btnDeleteArtist" onclick="deleteArtist(this)">Delete</button>
+            </div>
+        {{/each}}
+    </div>    
+</div>

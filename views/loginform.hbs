@@ -1,0 +1,23 @@
+<div class="loginForm">
+
+    <div id="container">
+        <div class="title">Member Login</div>
+        <form action="/login" method="post">
+            <label for="username">Username</label>
+            <input class="login-input" type="text" placeholder="username" name="username" required>
+
+            <label for="password">Password </label>
+            <input class="login-input" type="password" placeholder="password" name="password" required>
+
+            {{#if loginFailed}}
+                <p class="alarm">Login failed... Try again!</p>
+            {{/if}}
+
+            <button type="submit" class="login-button">
+                <h1>Login</h1>
+            </button>
+        </form>
+    </div>
+</div>
+
+{{>footer}}

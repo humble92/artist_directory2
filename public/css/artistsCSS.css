@@ -1,0 +1,53 @@
+#searchName {
+  width: 62%;
+}
+button {
+    height: 32px;
+    background-color: #ccc;
+}
+#list {
+    width: 360px;
+    margin: 0px auto;
+}
+.card {
+    border: 1px solid #c4ccc6;
+    padding: 15px;
+}
+.card:hover {
+    background-color: #dce6df;
+}
+.card img {
+    float: left;
+    margin-right: 15px;
+    max-width: 72px;
+    max-height: 72px;
+}
+.card span {
+    display: inline-block;
+    width: 50%;
+}
+.card p {
+    word-break:break-all;
+}
+.artist_name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+.artist_desc {
+    margin-top: 0px;
+    margin-left: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: medium;
+}
+.btnDeleteArtist {
+    margin-top: 15px;
+    height: 40px;
+    padding: 10px;
+    background-color: #fd3e3e;
+    color: white;
+    border-radius: 10px;
+    float: right;
+}

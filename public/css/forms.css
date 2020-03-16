@@ -1,0 +1,22 @@
+#addFormContainer {
+    width: 100%;
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+}
+button {
+    height: 32px;
+    background-color: #ccc;
+}
+#addBtnGroup {
+    display: flex;
+    justify-content: space-evenly;
+}
+#btnAdd {
+    display: block;
+    width: 120px;
+}
+#btnBack {
+    display: block;
+    width: 120px;
+}
