@@ -3,7 +3,7 @@ let db = require('../util/database.pg');
 // Add a single individual to the database
 function addArtist(data) {
     let sql = "Insert into artist (name, about, imageURL) values ('" + data.name+ "','"+ data.about+ "','" + data.imageURL + "')";
-    db.query(sql);
+    return db.query(sql);
 }
 
 // Gets all the individuals in the database
@@ -23,7 +23,7 @@ function searchArtist(ch) {
 
 // Gets a specific individual from the database
 function deleteArtist(id) {
-    db.query("delete from artist where id = " + id);
+    return db.query("delete from artist where id = " + id);
 }
 
 module.exports = {
