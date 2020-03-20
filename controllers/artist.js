@@ -33,8 +33,9 @@ exports.getArtist = (req,res,next) => {
 
 exports.deleteArtist = (req,res,next) => {
     let id = req.params.id;
-    artistModel.deleteartist(id);
-    res.redirect(301, '/artists');
+    artistModel.deleteartist(id).then(r =>
+        res.redirect(301, '/artists')
+    )
 }
 
 exports.postAddArtist = (req,res,next) => {
@@ -48,8 +49,9 @@ exports.postAddArtist = (req,res,next) => {
        imageURL: p_imageURL
     }
  
-    artistModel.add(pOject);
-    res.redirect(301, '/artists');
+    artistModel.add(pOject).then(r => 
+        res.redirect(301, '/artists')
+    );
 }
 
 exports.logout = (req,res,next) => {
